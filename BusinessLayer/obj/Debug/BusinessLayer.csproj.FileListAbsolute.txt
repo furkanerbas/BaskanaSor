@@ -1,0 +1,112 @@
+C:\Users\FURKAN\Source\Repos\AltinorduWebProject\BusinessLayer\bin\Debug\BusinessLayer.dll.config
+C:\Users\FURKAN\Source\Repos\AltinorduWebProject\BusinessLayer\bin\Debug\BusinessLayer.dll
+C:\Users\FURKAN\Source\Repos\AltinorduWebProject\BusinessLayer\bin\Debug\BusinessLayer.pdb
+C:\Users\FURKAN\Source\Repos\AltinorduWebProject\BusinessLayer\bin\Debug\DataAccessLayer.dll
+C:\Users\FURKAN\Source\Repos\AltinorduWebProject\BusinessLayer\bin\Debug\Entities.dll
+C:\Users\FURKAN\Source\Repos\AltinorduWebProject\BusinessLayer\bin\Debug\EntityFramework.dll
+C:\Users\FURKAN\Source\Repos\AltinorduWebProject\BusinessLayer\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\FURKAN\Source\Repos\AltinorduWebProject\BusinessLayer\bin\Debug\DataAccessLayer.pdb
+C:\Users\FURKAN\Source\Repos\AltinorduWebProject\BusinessLayer\bin\Debug\Entities.pdb
+C:\Users\FURKAN\Source\Repos\AltinorduWebProject\BusinessLayer\bin\Debug\EntityFramework.xml
+C:\Users\FURKAN\Source\Repos\AltinorduWebProject\BusinessLayer\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\FURKAN\Source\Repos\AltinorduWebProject\BusinessLayer\obj\Debug\BusinessLayer.csprojAssemblyReference.cache
+C:\Users\FURKAN\Source\Repos\AltinorduWebProject\BusinessLayer\obj\Debug\BusinessLayer.csproj.CoreCompileInputs.cache
+C:\Users\FURKAN\Source\Repos\AltinorduWebProject\BusinessLayer\obj\Debug\BusinessLayer.csproj.CopyComplete
+C:\Users\FURKAN\Source\Repos\AltinorduWebProject\BusinessLayer\obj\Debug\BusinessLayer.dll
+C:\Users\FURKAN\Source\Repos\AltinorduWebProject\BusinessLayer\obj\Debug\BusinessLayer.pdb
+C:\Users\User\source\repos\AltinorduWebProject\BusinessLayer\bin\Debug\BusinessLayer.dll.config
+C:\Users\User\source\repos\AltinorduWebProject\BusinessLayer\bin\Debug\BusinessLayer.dll
+C:\Users\User\source\repos\AltinorduWebProject\BusinessLayer\bin\Debug\BusinessLayer.pdb
+C:\Users\User\source\repos\AltinorduWebProject\BusinessLayer\bin\Debug\DataAccessLayer.dll
+C:\Users\User\source\repos\AltinorduWebProject\BusinessLayer\bin\Debug\Entities.dll
+C:\Users\User\source\repos\AltinorduWebProject\BusinessLayer\bin\Debug\EntityFramework.dll
+C:\Users\User\source\repos\AltinorduWebProject\BusinessLayer\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\User\source\repos\AltinorduWebProject\BusinessLayer\bin\Debug\DataAccessLayer.pdb
+C:\Users\User\source\repos\AltinorduWebProject\BusinessLayer\bin\Debug\Entities.pdb
+C:\Users\User\source\repos\AltinorduWebProject\BusinessLayer\bin\Debug\EntityFramework.xml
+C:\Users\User\source\repos\AltinorduWebProject\BusinessLayer\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\User\source\repos\AltinorduWebProject\BusinessLayer\obj\Debug\BusinessLayer.csproj.AssemblyReference.cache
+C:\Users\User\source\repos\AltinorduWebProject\BusinessLayer\obj\Debug\BusinessLayer.csproj.CoreCompileInputs.cache
+C:\Users\User\source\repos\AltinorduWebProject\BusinessLayer\obj\Debug\BusinessLayer.csproj.CopyComplete
+C:\Users\User\source\repos\AltinorduWebProject\BusinessLayer\obj\Debug\BusinessLayer.dll
+C:\Users\User\source\repos\AltinorduWebProject\BusinessLayer\obj\Debug\BusinessLayer.pdb
+C:\Users\User\Desktop\AltinorduWebProject\BusinessLayer\bin\Debug\BusinessLayer.dll.config
+C:\Users\User\Desktop\AltinorduWebProject\BusinessLayer\bin\Debug\BusinessLayer.dll
+C:\Users\User\Desktop\AltinorduWebProject\BusinessLayer\bin\Debug\BusinessLayer.pdb
+C:\Users\User\Desktop\AltinorduWebProject\BusinessLayer\bin\Debug\DataAccessLayer.dll
+C:\Users\User\Desktop\AltinorduWebProject\BusinessLayer\bin\Debug\Entities.dll
+C:\Users\User\Desktop\AltinorduWebProject\BusinessLayer\bin\Debug\EntityFramework.dll
+C:\Users\User\Desktop\AltinorduWebProject\BusinessLayer\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\User\Desktop\AltinorduWebProject\BusinessLayer\bin\Debug\DataAccessLayer.pdb
+C:\Users\User\Desktop\AltinorduWebProject\BusinessLayer\bin\Debug\Entities.pdb
+C:\Users\User\Desktop\AltinorduWebProject\BusinessLayer\bin\Debug\EntityFramework.xml
+C:\Users\User\Desktop\AltinorduWebProject\BusinessLayer\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\User\Desktop\AltinorduWebProject\BusinessLayer\obj\Debug\BusinessLayer.csproj.AssemblyReference.cache
+C:\Users\User\Desktop\AltinorduWebProject\BusinessLayer\obj\Debug\BusinessLayer.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\AltinorduWebProject\BusinessLayer\obj\Debug\BusinessLayer.csproj.CopyComplete
+C:\Users\User\Desktop\AltinorduWebProject\BusinessLayer\obj\Debug\BusinessLayer.dll
+C:\Users\User\Desktop\AltinorduWebProject\BusinessLayer\obj\Debug\BusinessLayer.pdb
+C:\Users\FURKAN\Desktop\AltinorduWebProject\BusinessLayer\bin\Debug\BusinessLayer.dll.config
+C:\Users\FURKAN\Desktop\AltinorduWebProject\BusinessLayer\bin\Debug\BusinessLayer.dll
+C:\Users\FURKAN\Desktop\AltinorduWebProject\BusinessLayer\bin\Debug\BusinessLayer.pdb
+C:\Users\FURKAN\Desktop\AltinorduWebProject\BusinessLayer\bin\Debug\DataAccessLayer.dll
+C:\Users\FURKAN\Desktop\AltinorduWebProject\BusinessLayer\bin\Debug\Entities.dll
+C:\Users\FURKAN\Desktop\AltinorduWebProject\BusinessLayer\bin\Debug\EntityFramework.dll
+C:\Users\FURKAN\Desktop\AltinorduWebProject\BusinessLayer\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\FURKAN\Desktop\AltinorduWebProject\BusinessLayer\bin\Debug\DataAccessLayer.pdb
+C:\Users\FURKAN\Desktop\AltinorduWebProject\BusinessLayer\bin\Debug\Entities.pdb
+C:\Users\FURKAN\Desktop\AltinorduWebProject\BusinessLayer\bin\Debug\EntityFramework.xml
+C:\Users\FURKAN\Desktop\AltinorduWebProject\BusinessLayer\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\FURKAN\Desktop\AltinorduWebProject\BusinessLayer\obj\Debug\BusinessLayer.csprojAssemblyReference.cache
+C:\Users\FURKAN\Desktop\AltinorduWebProject\BusinessLayer\obj\Debug\BusinessLayer.csproj.CoreCompileInputs.cache
+C:\Users\FURKAN\Desktop\AltinorduWebProject\BusinessLayer\obj\Debug\BusinessLayer.csproj.CopyComplete
+C:\Users\FURKAN\Desktop\AltinorduWebProject\BusinessLayer\obj\Debug\BusinessLayer.dll
+C:\Users\FURKAN\Desktop\AltinorduWebProject\BusinessLayer\obj\Debug\BusinessLayer.pdb
+F:\AltinorduWebProject\BusinessLayer\bin\Debug\BusinessLayer.dll.config
+F:\AltinorduWebProject\BusinessLayer\bin\Debug\BusinessLayer.dll
+F:\AltinorduWebProject\BusinessLayer\bin\Debug\BusinessLayer.pdb
+F:\AltinorduWebProject\BusinessLayer\bin\Debug\DataAccessLayer.dll
+F:\AltinorduWebProject\BusinessLayer\bin\Debug\Entities.dll
+F:\AltinorduWebProject\BusinessLayer\bin\Debug\EntityFramework.dll
+F:\AltinorduWebProject\BusinessLayer\bin\Debug\EntityFramework.SqlServer.dll
+F:\AltinorduWebProject\BusinessLayer\bin\Debug\DataAccessLayer.pdb
+F:\AltinorduWebProject\BusinessLayer\bin\Debug\Entities.pdb
+F:\AltinorduWebProject\BusinessLayer\bin\Debug\EntityFramework.xml
+F:\AltinorduWebProject\BusinessLayer\bin\Debug\EntityFramework.SqlServer.xml
+F:\AltinorduWebProject\BusinessLayer\obj\Debug\BusinessLayer.csproj.AssemblyReference.cache
+F:\AltinorduWebProject\BusinessLayer\obj\Debug\BusinessLayer.csproj.CoreCompileInputs.cache
+F:\AltinorduWebProject\BusinessLayer\obj\Debug\BusinessLayer.csproj.CopyComplete
+F:\AltinorduWebProject\BusinessLayer\obj\Debug\BusinessLayer.dll
+F:\AltinorduWebProject\BusinessLayer\obj\Debug\BusinessLayer.pdb
+D:\AltinorduWebProject\BusinessLayer\bin\Debug\BusinessLayer.dll.config
+D:\AltinorduWebProject\BusinessLayer\bin\Debug\BusinessLayer.dll
+D:\AltinorduWebProject\BusinessLayer\bin\Debug\BusinessLayer.pdb
+D:\AltinorduWebProject\BusinessLayer\bin\Debug\DataAccessLayer.dll
+D:\AltinorduWebProject\BusinessLayer\bin\Debug\Entities.dll
+D:\AltinorduWebProject\BusinessLayer\bin\Debug\EntityFramework.dll
+D:\AltinorduWebProject\BusinessLayer\bin\Debug\EntityFramework.SqlServer.dll
+D:\AltinorduWebProject\BusinessLayer\bin\Debug\DataAccessLayer.pdb
+D:\AltinorduWebProject\BusinessLayer\bin\Debug\Entities.pdb
+D:\AltinorduWebProject\BusinessLayer\bin\Debug\EntityFramework.xml
+D:\AltinorduWebProject\BusinessLayer\bin\Debug\EntityFramework.SqlServer.xml
+D:\AltinorduWebProject\BusinessLayer\obj\Debug\BusinessLayer.csprojAssemblyReference.cache
+D:\AltinorduWebProject\BusinessLayer\obj\Debug\BusinessLayer.csproj.CoreCompileInputs.cache
+D:\AltinorduWebProject\BusinessLayer\obj\Debug\BusinessLayer.csproj.CopyComplete
+D:\AltinorduWebProject\BusinessLayer\obj\Debug\BusinessLayer.dll
+D:\AltinorduWebProject\BusinessLayer\obj\Debug\BusinessLayer.pdb
+C:\Users\FURKAN\Desktop\Projeler\Altınordu Belediyesi\baskanasor\AltinorduWebProject\BusinessLayer\bin\Debug\BusinessLayer.dll.config
+C:\Users\FURKAN\Desktop\Projeler\Altınordu Belediyesi\baskanasor\AltinorduWebProject\BusinessLayer\bin\Debug\BusinessLayer.dll
+C:\Users\FURKAN\Desktop\Projeler\Altınordu Belediyesi\baskanasor\AltinorduWebProject\BusinessLayer\bin\Debug\BusinessLayer.pdb
+C:\Users\FURKAN\Desktop\Projeler\Altınordu Belediyesi\baskanasor\AltinorduWebProject\BusinessLayer\bin\Debug\DataAccessLayer.dll
+C:\Users\FURKAN\Desktop\Projeler\Altınordu Belediyesi\baskanasor\AltinorduWebProject\BusinessLayer\bin\Debug\Entities.dll
+C:\Users\FURKAN\Desktop\Projeler\Altınordu Belediyesi\baskanasor\AltinorduWebProject\BusinessLayer\bin\Debug\EntityFramework.dll
+C:\Users\FURKAN\Desktop\Projeler\Altınordu Belediyesi\baskanasor\AltinorduWebProject\BusinessLayer\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\FURKAN\Desktop\Projeler\Altınordu Belediyesi\baskanasor\AltinorduWebProject\BusinessLayer\bin\Debug\DataAccessLayer.pdb
+C:\Users\FURKAN\Desktop\Projeler\Altınordu Belediyesi\baskanasor\AltinorduWebProject\BusinessLayer\bin\Debug\Entities.pdb
+C:\Users\FURKAN\Desktop\Projeler\Altınordu Belediyesi\baskanasor\AltinorduWebProject\BusinessLayer\bin\Debug\EntityFramework.xml
+C:\Users\FURKAN\Desktop\Projeler\Altınordu Belediyesi\baskanasor\AltinorduWebProject\BusinessLayer\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\FURKAN\Desktop\Projeler\Altınordu Belediyesi\baskanasor\AltinorduWebProject\BusinessLayer\obj\Debug\BusinessLayer.csproj.AssemblyReference.cache
+C:\Users\FURKAN\Desktop\Projeler\Altınordu Belediyesi\baskanasor\AltinorduWebProject\BusinessLayer\obj\Debug\BusinessLayer.csproj.CoreCompileInputs.cache
+C:\Users\FURKAN\Desktop\Projeler\Altınordu Belediyesi\baskanasor\AltinorduWebProject\BusinessLayer\obj\Debug\BusinessLayer.csproj.CopyComplete
+C:\Users\FURKAN\Desktop\Projeler\Altınordu Belediyesi\baskanasor\AltinorduWebProject\BusinessLayer\obj\Debug\BusinessLayer.dll
+C:\Users\FURKAN\Desktop\Projeler\Altınordu Belediyesi\baskanasor\AltinorduWebProject\BusinessLayer\obj\Debug\BusinessLayer.pdb

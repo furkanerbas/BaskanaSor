@@ -1,0 +1,77 @@
+C:\Users\FURKAN\Source\Repos\AltinorduWebProject\DataAccessLayer\bin\Debug\DataAccessLayer.dll
+C:\Users\FURKAN\Source\Repos\AltinorduWebProject\DataAccessLayer\bin\Debug\DataAccessLayer.pdb
+C:\Users\FURKAN\Source\Repos\AltinorduWebProject\DataAccessLayer\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\FURKAN\Source\Repos\AltinorduWebProject\DataAccessLayer\bin\Debug\EntityFramework.dll
+C:\Users\FURKAN\Source\Repos\AltinorduWebProject\DataAccessLayer\bin\Debug\Entities.dll
+C:\Users\FURKAN\Source\Repos\AltinorduWebProject\DataAccessLayer\bin\Debug\Entities.pdb
+C:\Users\FURKAN\Source\Repos\AltinorduWebProject\DataAccessLayer\obj\Debug\DataAccessLayer.csprojAssemblyReference.cache
+C:\Users\FURKAN\Source\Repos\AltinorduWebProject\DataAccessLayer\obj\Debug\DataAccessLayer.csproj.CoreCompileInputs.cache
+C:\Users\FURKAN\Source\Repos\AltinorduWebProject\DataAccessLayer\obj\Debug\DataAccessLayer.csproj.CopyComplete
+C:\Users\FURKAN\Source\Repos\AltinorduWebProject\DataAccessLayer\obj\Debug\DataAccessLayer.dll
+C:\Users\FURKAN\Source\Repos\AltinorduWebProject\DataAccessLayer\obj\Debug\DataAccessLayer.pdb
+C:\Users\User\source\repos\AltinorduWebProject\DataAccessLayer\bin\Debug\DataAccessLayer.dll
+C:\Users\User\source\repos\AltinorduWebProject\DataAccessLayer\bin\Debug\DataAccessLayer.pdb
+C:\Users\User\source\repos\AltinorduWebProject\DataAccessLayer\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\User\source\repos\AltinorduWebProject\DataAccessLayer\bin\Debug\EntityFramework.dll
+C:\Users\User\source\repos\AltinorduWebProject\DataAccessLayer\bin\Debug\Entities.dll
+C:\Users\User\source\repos\AltinorduWebProject\DataAccessLayer\bin\Debug\Entities.pdb
+C:\Users\User\source\repos\AltinorduWebProject\DataAccessLayer\obj\Debug\DataAccessLayer.csproj.AssemblyReference.cache
+C:\Users\User\source\repos\AltinorduWebProject\DataAccessLayer\obj\Debug\DataAccessLayer.csproj.CoreCompileInputs.cache
+C:\Users\User\source\repos\AltinorduWebProject\DataAccessLayer\obj\Debug\DataAccessLayer.csproj.CopyComplete
+C:\Users\User\source\repos\AltinorduWebProject\DataAccessLayer\obj\Debug\DataAccessLayer.dll
+C:\Users\User\source\repos\AltinorduWebProject\DataAccessLayer\obj\Debug\DataAccessLayer.pdb
+C:\Users\User\Desktop\AltinorduWebProject\DataAccessLayer\bin\Debug\DataAccessLayer.dll
+C:\Users\User\Desktop\AltinorduWebProject\DataAccessLayer\bin\Debug\DataAccessLayer.pdb
+C:\Users\User\Desktop\AltinorduWebProject\DataAccessLayer\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\User\Desktop\AltinorduWebProject\DataAccessLayer\bin\Debug\EntityFramework.dll
+C:\Users\User\Desktop\AltinorduWebProject\DataAccessLayer\bin\Debug\Entities.dll
+C:\Users\User\Desktop\AltinorduWebProject\DataAccessLayer\bin\Debug\Entities.pdb
+C:\Users\User\Desktop\AltinorduWebProject\DataAccessLayer\obj\Debug\DataAccessLayer.csproj.AssemblyReference.cache
+C:\Users\User\Desktop\AltinorduWebProject\DataAccessLayer\obj\Debug\DataAccessLayer.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\AltinorduWebProject\DataAccessLayer\obj\Debug\DataAccessLayer.csproj.CopyComplete
+C:\Users\User\Desktop\AltinorduWebProject\DataAccessLayer\obj\Debug\DataAccessLayer.dll
+C:\Users\User\Desktop\AltinorduWebProject\DataAccessLayer\obj\Debug\DataAccessLayer.pdb
+C:\Users\FURKAN\Desktop\AltinorduWebProject\DataAccessLayer\bin\Debug\DataAccessLayer.dll
+C:\Users\FURKAN\Desktop\AltinorduWebProject\DataAccessLayer\bin\Debug\DataAccessLayer.pdb
+C:\Users\FURKAN\Desktop\AltinorduWebProject\DataAccessLayer\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\FURKAN\Desktop\AltinorduWebProject\DataAccessLayer\bin\Debug\EntityFramework.dll
+C:\Users\FURKAN\Desktop\AltinorduWebProject\DataAccessLayer\bin\Debug\Entities.dll
+C:\Users\FURKAN\Desktop\AltinorduWebProject\DataAccessLayer\bin\Debug\Entities.pdb
+C:\Users\FURKAN\Desktop\AltinorduWebProject\DataAccessLayer\obj\Debug\DataAccessLayer.csprojAssemblyReference.cache
+C:\Users\FURKAN\Desktop\AltinorduWebProject\DataAccessLayer\obj\Debug\DataAccessLayer.csproj.CoreCompileInputs.cache
+C:\Users\FURKAN\Desktop\AltinorduWebProject\DataAccessLayer\obj\Debug\DataAccessLayer.csproj.CopyComplete
+C:\Users\FURKAN\Desktop\AltinorduWebProject\DataAccessLayer\obj\Debug\DataAccessLayer.dll
+C:\Users\FURKAN\Desktop\AltinorduWebProject\DataAccessLayer\obj\Debug\DataAccessLayer.pdb
+F:\AltinorduWebProject\DataAccessLayer\bin\Debug\DataAccessLayer.dll
+F:\AltinorduWebProject\DataAccessLayer\bin\Debug\DataAccessLayer.pdb
+F:\AltinorduWebProject\DataAccessLayer\bin\Debug\EntityFramework.SqlServer.dll
+F:\AltinorduWebProject\DataAccessLayer\bin\Debug\EntityFramework.dll
+F:\AltinorduWebProject\DataAccessLayer\bin\Debug\Entities.dll
+F:\AltinorduWebProject\DataAccessLayer\bin\Debug\Entities.pdb
+F:\AltinorduWebProject\DataAccessLayer\obj\Debug\DataAccessLayer.csproj.AssemblyReference.cache
+F:\AltinorduWebProject\DataAccessLayer\obj\Debug\DataAccessLayer.csproj.CoreCompileInputs.cache
+F:\AltinorduWebProject\DataAccessLayer\obj\Debug\DataAccessLayer.csproj.CopyComplete
+F:\AltinorduWebProject\DataAccessLayer\obj\Debug\DataAccessLayer.dll
+F:\AltinorduWebProject\DataAccessLayer\obj\Debug\DataAccessLayer.pdb
+D:\AltinorduWebProject\DataAccessLayer\bin\Debug\DataAccessLayer.dll
+D:\AltinorduWebProject\DataAccessLayer\bin\Debug\DataAccessLayer.pdb
+D:\AltinorduWebProject\DataAccessLayer\bin\Debug\EntityFramework.SqlServer.dll
+D:\AltinorduWebProject\DataAccessLayer\bin\Debug\EntityFramework.dll
+D:\AltinorduWebProject\DataAccessLayer\bin\Debug\Entities.dll
+D:\AltinorduWebProject\DataAccessLayer\bin\Debug\Entities.pdb
+D:\AltinorduWebProject\DataAccessLayer\obj\Debug\DataAccessLayer.csprojAssemblyReference.cache
+D:\AltinorduWebProject\DataAccessLayer\obj\Debug\DataAccessLayer.csproj.CoreCompileInputs.cache
+D:\AltinorduWebProject\DataAccessLayer\obj\Debug\DataAccessLayer.csproj.CopyComplete
+D:\AltinorduWebProject\DataAccessLayer\obj\Debug\DataAccessLayer.dll
+D:\AltinorduWebProject\DataAccessLayer\obj\Debug\DataAccessLayer.pdb
+C:\Users\FURKAN\Desktop\Projeler\Altınordu Belediyesi\baskanasor\AltinorduWebProject\DataAccessLayer\bin\Debug\DataAccessLayer.dll
+C:\Users\FURKAN\Desktop\Projeler\Altınordu Belediyesi\baskanasor\AltinorduWebProject\DataAccessLayer\bin\Debug\DataAccessLayer.pdb
+C:\Users\FURKAN\Desktop\Projeler\Altınordu Belediyesi\baskanasor\AltinorduWebProject\DataAccessLayer\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\FURKAN\Desktop\Projeler\Altınordu Belediyesi\baskanasor\AltinorduWebProject\DataAccessLayer\bin\Debug\EntityFramework.dll
+C:\Users\FURKAN\Desktop\Projeler\Altınordu Belediyesi\baskanasor\AltinorduWebProject\DataAccessLayer\bin\Debug\Entities.dll
+C:\Users\FURKAN\Desktop\Projeler\Altınordu Belediyesi\baskanasor\AltinorduWebProject\DataAccessLayer\bin\Debug\Entities.pdb
+C:\Users\FURKAN\Desktop\Projeler\Altınordu Belediyesi\baskanasor\AltinorduWebProject\DataAccessLayer\obj\Debug\DataAccessLayer.csproj.AssemblyReference.cache
+C:\Users\FURKAN\Desktop\Projeler\Altınordu Belediyesi\baskanasor\AltinorduWebProject\DataAccessLayer\obj\Debug\DataAccessLayer.csproj.CoreCompileInputs.cache
+C:\Users\FURKAN\Desktop\Projeler\Altınordu Belediyesi\baskanasor\AltinorduWebProject\DataAccessLayer\obj\Debug\DataAccessLayer.csproj.CopyComplete
+C:\Users\FURKAN\Desktop\Projeler\Altınordu Belediyesi\baskanasor\AltinorduWebProject\DataAccessLayer\obj\Debug\DataAccessLayer.dll
+C:\Users\FURKAN\Desktop\Projeler\Altınordu Belediyesi\baskanasor\AltinorduWebProject\DataAccessLayer\obj\Debug\DataAccessLayer.pdb

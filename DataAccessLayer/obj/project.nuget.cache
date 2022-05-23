@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "3LU4OyYuARYqAZktMvFZpmgZbugbInD5VymzpvlLY1T8WPA4jB2U6faZMvcK/sxXS8vZEmqO9B/9qghXJ9wbwA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\FURKAN\\Desktop\\Projeler\\Altınordu Belediyesi\\baskanasor\\AltinorduWebProject\\DataAccessLayer\\DataAccessLayer.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\FURKAN\\.nuget\\packages\\entityframework\\6.4.4\\entityframework.6.4.4.nupkg.sha512"
+  ],
+  "logs": []
+}
