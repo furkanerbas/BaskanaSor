@@ -1,0 +1,173 @@
+﻿
+@{
+    ViewData["Title"] = "Index4";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Result Visualization</title>
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $.ajax({
+                type: "POST",
+                dataType: "json",
+                contentType: "application/json",
+                url: '@Url.Action("VisualizeMessageResult", "Contact")',
+                success: function (result) {
+                    google.charts.load('current', {
+                        'packages': ['corechart']
+                    });
+                    google.charts.setOnLoadCallback(function () {
+                        drawChart(result);
+                    });
+                }
+            });
+        });
+
+        function drawChart(result) {
+            var data = new google.visualization.DataTable();
+            data.addColumn('string', 'Name');
+            data.addColumn('number', 'Stoklar');
+            var dataArray = [];
+
+            $.each(result, function (i, obj) {
+                dataArray.push([obj.msjTuru, obj.msjSayi]);
+            });
+            data.addRows(dataArray);
+
+            var columnChartOptions = {
+                title: "Mesaj - Durum Grafiği",
+                width: 1000,
+                height: 400,
+                bar: { groupWidth: "20%" },
+            };
+
+            var columnChart = new google.visualization.PieChart(document
+                .getElementById('Piechart_div'));
+
+            columnChart.draw(data, columnChartOptions);
+        }
+
+        $(document).ready(function () {
+            $.ajax({
+                type: "POST",
+                dataType: "json",
+                contentType: "application/json",
+                url: '@Url.Action("VisualizeMessageResultNew", "Contact")',
+                success: function (result) {
+                    google.charts.load('current', {
+                        'packages': ['corechart']
+                    });
+                    google.charts.setOnLoadCallback(function () {
+                        drawChartNew(result);
+                    });
+                }
+            });
+        });
+
+        function drawChartNew(result) {
+            var data = new google.visualization.DataTable();
+            data.addColumn('string', 'Name');
+            data.addColumn('number', 'Stoklar');
+            var dataArray = [];
+
+            $.each(result, function (i, obj) {
+                dataArray.push([obj.msjTuru, obj.msjSayi]);
+            });
+            data.addRows(dataArray);
+
+            var columnChartOptions = {
+                title: "Mesaj - Okundu Grafiği",
+                width: 1000,
+                height: 400,
+                bar: { groupWidth: "20%" },
+            };
+
+            var columnChart = new google.visualization.PieChart(document
+                .getElementById('Piechartnew_div'));
+
+            columnChart.draw(data, columnChartOptions);
+        }
+
+       
+
+    </script>
+</head>
+<body>
+    <div class="card-body">
+      
+            <input type="date" id="baslangic" required/> <input type="date" id="bitis" required /> <button type="button" id="btn1" name="btn_1">Listele</button>
+        
+    </div>
+    <div id="Piechart_div"></div>
+    <div id="Piechartnew_div"></div>
+</body>
+</html>
+
+© 2021 GitHub, Inc.
+Terms
+Privacy
+Security
+Status
+Docs
+Contact GitHub
+Pricing
+API
+Training
+Blog
+About
+Loading complete
+
+
+<script>
+    $(function () {
+        $("#btn1").click(function (e) {
+            e.preventDefault();
+            var b1 = $("#baslangic").val();
+            var b2 = $("#bitis").val();
+            $.ajax({
+                type: "GET",
+                dataType: "json",
+                data:'baslangic='+b1+'&bitis='+b2,
+                contentType: "application/json",
+                url: '@Url.Action("VisualizeMessageResult", "Contact")',
+                success: function (result) {
+                    google.charts.load('current', {
+                        'packages': ['corechart']
+                    });
+                    google.charts.setOnLoadCallback(function () {
+                        drawChart(result);
+                    });
+                }
+            });
+        })
+        $("#btn1").click(function (e) {
+            e.preventDefault();
+            var b1 = $("#baslangic").val();
+            var b2 = $("#bitis").val();
+            $.ajax({
+                type: "GET",
+                dataType: "json",
+                data:'baslangic='+b1+'&bitis='+b2,
+                contentType: "application/json",
+                url: '@Url.Action("VisualizeMessageResultNew", "Contact")',
+                success: function (result) {
+                    google.charts.load('current', {
+                        'packages': ['corechart']
+                    });
+                    google.charts.setOnLoadCallback(function () {
+                        drawChartNew(result);
+                    });
+                }
+            });
+        })
+    })
+</script>

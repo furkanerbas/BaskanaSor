@@ -1,0 +1,24 @@
+﻿body {
+}
+#dis_bolme {
+    width: 400px;
+    height: 300px;
+}
+
+.ic_bolme {
+    float:left;
+    margin-right: 2px;
+    width:550px;
+    height:250px;
+}
+@media screen and (max-width:800px) {
+    #dis_bolme {
+        width: 450px;
+        height: 300px;
+    }
+    .ic_bolme {
+        float: left;
+        width: 250px;
+        height: 200px;
+    }
+}

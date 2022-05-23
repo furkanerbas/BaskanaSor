@@ -1,0 +1,308 @@
+﻿body {
+}
+#dis_bolme_report {
+    width: 400px;
+    height: 300px;
+}
+
+.ic_bolme_report {
+    float:left;
+    margin-right: 2px;
+    width:500px;
+    height:250px;
+}
+.ic_bolmeaylik_report {
+    float: left;
+    margin-right: 2px;
+    width: 200px;
+    height: 300px;
+}
+@media screen and (max-width: 360px) {
+    #dis_bolme_report {
+        width: 150px;
+        height: 300px;
+    }
+
+    .ic_bolme_report {
+        float: left;
+        width: 100px;
+        height: 200px;
+    }
+
+    .ic_bolmeaylik_report {
+        float: left;
+        width: 100px;
+        height: 200px;
+    }
+}
+@media screen and (max-width: 375px) and (min-width: 360px) {
+    #dis_bolme_report {
+        width: 150px;
+        height: 300px;
+    }
+
+    .ic_bolme_report {
+        float: left;
+        width: 120px;
+        height: 200px;
+    }
+
+    .ic_bolmeaylik_report {
+        float: left;
+        width: 120px;
+        height: 200px;
+    }
+}
+@media screen and (max-width: 425px) and (min-width: 375px) {
+    #dis_bolme_report {
+        width: 150px;
+        height: 300px;
+    }
+
+    .ic_bolme_report {
+        float: left;
+        width: 130px;
+        height: 200px;
+    }
+
+    .ic_bolmeaylik_report {
+        float: left;
+        width: 130px;
+        height: 200px;
+    }
+}
+@media screen and (max-width: 587px) and (min-width: 425px) {
+    #dis_bolme_report {
+        width: 150px;
+        height: 300px;
+    }
+
+    .ic_bolme_report {
+        float: left;
+        width: 160px;
+        height: 200px;
+    }
+
+    .ic_bolmeaylik_report {
+        float: left;
+        width: 160px;
+        height: 200px;
+    }
+}
+@media screen and (max-width: 700px) and (min-width: 687px) {
+    #dis_bolme_report {
+        width: 150px;
+        height: 300px;
+    }
+
+    .ic_bolme_report {
+        float: left;
+        width: 245px;
+        height: 200px;
+    }
+
+    .ic_bolmeaylik_report {
+        float: left;
+        width: 245px;
+        height: 200px;
+    }
+}
+
+@media screen and (max-width: 687px) and (min-width: 587px) {
+    #dis_bolme_report {
+        width: 450px;
+        height: 300px;
+    }
+
+    .ic_bolme_report {
+        float: left;
+        width: 250px;
+        height: 200px;
+    }
+
+    .ic_bolmeaylik_report {
+        float: left;
+        width: 250px;
+        height: 200px;
+    }
+}
+@media screen and (max-width: 768px) and (min-width: 687px) {
+    #dis_bolme_report {
+        width: 450px;
+        height: 300px;
+    }
+
+    .ic_bolme_report {
+        float: left;
+        width: 250px;
+        height: 200px;
+    }
+
+    .ic_bolmeaylik_report {
+        float: left;
+        width: 300px;
+        height: 200px;
+    }
+}
+@media screen and (max-width: 800px) and (min-width: 768px) {
+    #dis_bolme_report {
+        width: 450px;
+        height: 300px;
+    }
+
+    .ic_bolme_report {
+        float: left;
+        width: 250px;
+        height: 200px;
+    }
+
+    .ic_bolmeaylik_report {
+        float: left;
+        width: 700px;
+        height: 200px;
+    }
+}
+@media screen and (max-width: 1024px) and (min-width: 801px) {
+    #dis_bolme_report {
+        width: 450px;
+        height: 300px;
+    }
+
+    .ic_bolme_report {
+        float: left;
+        width: 150px;
+        height: 200px;
+    }
+
+    .ic_bolmeaylik_report {
+        float: left;
+        width: 680px;
+        height: 200px;
+    }
+}
+@media screen and (max-width: 1302px) and (min-width: 1025px) {
+    #dis_bolme_report {
+        width: 450px;
+        height: 300px;
+    }
+
+    .ic_bolme_report {
+        float: left;
+        width: 300px;
+        height: 200px;
+    }
+
+    .ic_bolmeaylik_report {
+        float: left;
+        width: 700px;
+        height: 200px;
+    }
+}
+@media screen and (max-width: 1440px) and (min-width: 1302px) {
+    #dis_bolme_report {
+        width: 450px;
+        height: 300px;
+    }
+
+    .ic_bolme_report {
+        float: left;
+        width: 300px;
+        height: 200px;
+    }
+
+    .ic_bolmeaylik_report {
+        float: left;
+        width: 1000px;
+        height: 200px;
+    }
+}
+@media screen and (max-width: 1553px) and (min-width: 1440px) {
+    #dis_bolme_report {
+        width: 450px;
+        height: 300px;
+    }
+
+    .ic_bolme_report {
+        float: left;
+        width: 500px;
+        height: 200px;
+    }
+
+    .ic_bolmeaylik_report {
+        float: left;
+        width: 1100px;
+        height: 200px;
+    }
+}
+@media screen and (max-width: 1754px) and (min-width: 1553px) {
+    #dis_bolme_report {
+        width: 800px;
+        height: 300px;
+    }
+
+    .ic_bolme_report {
+        float: left;
+        width: 600px;
+        height: 300px;
+    }
+
+    .ic_bolmeaylik_report {
+        float: left;
+        width: 1200px;
+        height: 500px;
+    }
+}
+@media screen and (max-width: 2118px) and (min-width: 1753px) {
+    #dis_bolme_report {
+        width: 800px;
+        height: 300px;
+    }
+
+    .ic_bolme_report {
+        float: left;
+        width: 700px;
+        height: 300px;
+    }
+
+    .ic_bolmeaylik_report {
+        float: left;
+        width: 1400px;
+        height: 500px;
+    }
+}
+@media screen and (max-width: 2560px) and (min-width: 2118px) {
+    #dis_bolme_report {
+        width: 800px;
+        height: 300px;
+    }
+
+    .ic_bolme_report {
+        float: left;
+        width: 700px;
+        height: 300px;
+    }
+
+    .ic_bolmeaylik_report {
+        float: left;
+        width: 1800px;
+        height: 500px;
+    }
+}
+@media screen and (max-width: 2560px) and (min-width: 2118px) {
+    #dis_bolme_report {
+        width: 800px;
+        height: 300px;
+    }
+
+    .ic_bolme_report {
+        float: left;
+        width: 700px;
+        height: 300px;
+    }
+
+    .ic_bolmeaylik_report {
+        float: left;
+        width: 1800px;
+        height: 500px;
+    }
+}

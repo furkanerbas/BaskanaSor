@@ -1,0 +1,132 @@
+﻿@using Entities.ValueObjects
+@model AddPersonelViewModel
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700,900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="~/AdminLTE-3.0.4/contact-form-16/contact-form-16/fonts/icomoon/style.css">
+
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="~/AdminLTE-3.0.4/contact-form-16/contact-form-16/css/bootstrap.min.css">
+
+    <!-- Style -->
+    <link rel="stylesheet" href="~/AdminLTE-3.0.4/contact-form-16/contact-form-16/css/style.css">
+
+    <title>İletişim Formu</title>
+</head>
+<body>
+
+
+    <div class="content">
+
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-10">
+
+                    <div class="row justify-content-center">
+                        <div class="col-md-6">
+
+                            <h3 class="heading mb-4">Başkana Sor !</h3>
+                            <p>Yandaki formu doldurarak başkana görüş ve önerilerinizi bildirebilirsiniz.</p>
+
+                            <p><img src="~/AdminLTE-3.0.4/contact-form-16/contact-form-16/images/askin-toren.jpg" alt="Image" class="img-fluid"></p>
+
+
+                        </div>                      
+                        <div class="col-md-6">
+                            @using (Html.BeginForm("AddPersonelMessage", "Home", FormMethod.Post))
+                            {
+
+                            <form class="mb-5" method="post" id="contactForm" name="contactForm">
+                                <div class="row">
+                                    <div class="col-md-12 form-group">
+                                        <input type="text" class="form-control" name="Ad" id="Ad" style="text-transform:uppercase" placeholder="Adınız (isteğe bağlı)">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12 form-group">
+                                        <input type="text" class="form-control" name="Soyad" id="Soyad" style="text-transform:uppercase" placeholder="Soyadınız (isteğe bağlı)">
+                                        @*@Html.TextBoxFor(x => x.Soyad, new { placeholder = "Soyadınız (isteğe bağlı)", @class = "form-control" })*@
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12 form-group">
+                                        @Html.DropDownListFor(x => x.birim_Id, ViewBag.BirimList as SelectList, "-- Çalıştığınız Birim --", new { @class = "form-control" })
+                                        @Html.ValidationMessageFor(x => x.birim_Id, String.Empty, new { @style = "color:red;!important" })
+
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12 form-group">
+                                        <input type="email" class="form-control" name="Eposta" id="Eposta" placeholder="E-posta (Geri Dönüş için Gereklidir!)">
+                                        @*@Html.TextBoxFor(x=>x.Eposta, new { placeholder ="E-posta", @class ="form-control"})*@
+                                        @Html.ValidationMessageFor(x => x.Eposta, String.Empty, new { @style = "color:red;!important" })
+
+                                    </div>
+                                </div>
+                                <div class="form-radio">
+                                    <label for="gender" class="radio-label">Mesajınızın Türünü Seçiniz :</label>
+                                    <div class="form-radio-item">
+                                        <input type="radio" name="MesajTuru" id="MesajTuru" value="İstek" checked>
+                                        <label for="male">İstek</label>
+                                        <span class="check"></span>
+                                    </div>
+                                    <div class="form-radio-item">
+                                        <input type="radio" name="MesajTuru" id="MesajTuru" value="Teşekkür">
+                                        <label for="female">Teşekkür</label>
+                                        <span class="check"></span>
+                                    </div>
+                                    <div class="form-radio-item">
+                                        <input type="radio" name="MesajTuru" id="MesajTuru" value="Şikayet">
+                                        <label for="female">Şikayet</label>
+                                        <span class="check"></span>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12 form-group">
+                                        <textarea class="form-control" name="Mesaj" id="Mesaj" cols="30" rows="7" style="text-transform:capitalize" placeholder="Mesajınızı buraya yazınız."></textarea>
+                                        @*@Html.TextAreaFor(x => x.Mesaj, new { placeholder = "Mesajınızı buraya yazınız.", @class = "form-control", @cols=30, @rows= 7 })*@
+                                        @Html.ValidationMessageFor(x => x.Mesaj, String.Empty, new { @style = "color:red;!important" })
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12">
+                                        <input type="submit" value="Gönder" class="btn btn-primary rounded-0 py-2 px-4">
+                                        <span class="submitting"></span>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+
+                                    @if (ViewBag.Result != null)
+                                    {
+                                        <div class="alert alert-@ViewBag.Status" role="alert">
+                                            @ViewBag.Result
+                                        </div>
+                                    }
+
+                                </div>
+                            </form>                               
+                            }
+                        </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <script src="~/AdminLTE-3.0.4/contact-form-16/contact-form-16/js/jquery-3.3.1.min.js"></script>
+    <script src="~/AdminLTE-3.0.4/contact-form-16/contact-form-16/js/popper.min.js"></script>
+    <script src="~/AdminLTE-3.0.4/contact-form-16/contact-form-16/js/bootstrap.min.js"></script>
+    <script src="~/AdminLTE-3.0.4/contact-form-16/contact-form-16/js/jquery.validate.min.js"></script>
+    <script src="~/AdminLTE-3.0.4/contact-form-16/contact-form-16/js/main.js"></script>
+
+</body>
+</html>

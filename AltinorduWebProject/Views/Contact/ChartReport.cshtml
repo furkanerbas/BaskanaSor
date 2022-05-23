@@ -1,0 +1,832 @@
+﻿
+@{
+    ViewBag.Title = "CreateChart";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+    <head>
+        <link href="~/css/login-avatar.css" rel="stylesheet" />
+        <link href="~/css/chart-center.css" rel="stylesheet" />
+        <link href="~/css/chart-responsive.css" rel="stylesheet" />
+        <!-- daterange picker -->
+        <link href="~/AdminLTE-3.0.4/plugins/daterangepicker/daterangepicker.css" rel="stylesheet" />
+        <link href="~/css/center.css" rel="stylesheet" />
+
+        <!--DATEPİCKER-->
+        <!--GOOGLE CHART-->
+        <title>Result Visualization</title>
+        <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <link href="~/css/social-media-icons.css" rel="stylesheet" />
+        <link href="~/css/responsive-google-chart-report.css" rel="stylesheet" />
+        <link href="~/css/responsive-button.css" rel="stylesheet" />
+
+        <script>
+        var btarih = "";
+        var bitarih = "";
+        //MESAJ DURUM GRAFİĞİ
+        $(document).ready(function () {
+            $.ajax({
+                type: "POST",
+                dataType: "json",
+                contentType: "application/json",
+                url: '@Url.Action("VisualizeMessageResult", "Contact")',
+                success: function (result) {
+                    google.charts.load('current', {
+                        'packages': ['corechart']
+                    });
+                    google.charts.setOnLoadCallback(function () {
+                        drawChart(result);
+                    });
+                }
+            });
+        });
+
+        function drawChart(result) {
+            var data = new google.visualization.DataTable();
+            data.addColumn('string', 'Name');
+            data.addColumn('number', 'Stoklar');
+            var dataArray = [];
+
+            $.each(result, function (i, obj) {
+                dataArray.push([obj.msjTuru, obj.msjSayi]);
+            });
+            data.addRows(dataArray);
+
+            var columnChartOptions = {
+                title: "Mesaj - Durum Grafiği",
+                colors: ['#265feb', '#50c249', '#e72a19'],
+                bar: { groupWidth: "20%" },
+                animation: {
+                    duration: 1500,
+                    startup: true
+                }
+            };
+
+            var columnChart = new google.visualization.PieChart(document
+                .getElementById('Piechart_div'));
+            columnChart.draw(data, columnChartOptions);
+            $(window).resize(function () {
+                columnChart.draw(data, columnChartOptions);
+            });
+
+            function addUrlParameter(name, value) {
+                var searchParams = new URLSearchParams(window.location.search)
+                searchParams.set(name, value)
+                window.location.search = searchParams.toString()
+            }
+            google.visualization.events.addListener(columnChart, 'select', function () {
+                var selection = columnChart.getSelection();
+                var valueselected = data.getFormattedValue(selection[0].row, 0);
+
+                var url = new URL('https://localhost:44374/Contact/ChartIndex');
+                var search_params = url.searchParams;
+                var bastarih = btarih;
+                var bitistarih = bitarih;
+
+
+                search_params.set('chart', valueselected);
+                search_params.set('bastarih', bastarih);
+                search_params.set('bittarih', bitistarih);
+
+                var new_url = url.toString();
+
+                window.location = new_url;
+
+
+            });
+
+        }
+        //MESAJ DURUM GRAFİĞİ BİTİŞ
+
+        //MESAJ OKUNDU-OKUNMADI GRAFİĞİ
+
+        $(document).ready(function () {
+            $.ajax({
+                type: "POST",
+                dataType: "json",
+                contentType: "application/json",
+                url: '@Url.Action("VisualizeMessageResultNew", "Contact")',
+                success: function (result) {
+                    google.charts.load('current', {
+                        'packages': ['corechart']
+                    });
+                    google.charts.setOnLoadCallback(function () {
+                        drawChartNew(result);
+                    });
+                }
+            });
+        });
+
+        function drawChartNew(result) {
+            var data = new google.visualization.DataTable();
+            data.addColumn('string', 'Name');
+            data.addColumn('number', 'Stoklar');
+            var dataArray = [];
+
+            $.each(result, function (i, obj) {
+                dataArray.push([obj.msjTuru, obj.msjSayi]);
+            });
+            data.addRows(dataArray);
+
+            var columnChartOptions = {
+                title: "Mesaj - Cevap Grafiği",
+                colors: ['#50c249', '#e72a19'],
+                bar: { groupWidth: "20%" },
+                animation: {
+                    duration: 1500,
+                    startup: true
+                }
+            };
+
+            var columnChart = new google.visualization.PieChart(document
+                .getElementById('Piechartnew_div'));
+
+            columnChart.draw(data, columnChartOptions);
+            $(window).resize(function () {
+                columnChart.draw(data, columnChartOptions);
+            });
+
+            google.visualization.events.addListener(columnChart, 'select', function () {
+                var selection = columnChart.getSelection();
+                var valueselected = data.getFormattedValue(selection[0].row, 0);
+
+                var url = new URL('https://localhost:44374/Contact/ChartMessage');
+                var search_params = url.searchParams;
+                var bastarih = btarih;
+                var bitistarih = bitarih;
+
+
+                search_params.set('chart', valueselected);
+                search_params.set('bastarih', bastarih);
+                search_params.set('bittarih', bitistarih);
+
+                var new_url = url.toString();
+
+                window.location = new_url;
+
+
+            });
+
+            //$(window).resize(function () {
+            //    columnChart.draw(data, columnChartOptions);
+            //});
+        }
+        //MESAJ OKUNDU-OKUNMADI BİTİŞ
+
+        //OKUNAN MESAJLARIN DURUM GRAFİĞİ
+        $(document).ready(function () {
+            $.ajax({
+                type: "POST",
+                dataType: "json",
+                contentType: "application/json",
+                url: '@Url.Action("VisualizeMessageResultTrue", "Contact")',
+                success: function (result) {
+                    google.charts.load('current', {
+                        'packages': ['corechart']
+                    });
+                    google.charts.setOnLoadCallback(function () {
+                        drawChartTrue(result);
+                    });
+                }
+            });
+        });
+
+        function drawChartTrue(result) {
+            var data = new google.visualization.DataTable();
+            data.addColumn('string', 'Name');
+            data.addColumn('number', 'Mesajlar');
+            var dataArray = [];
+
+            $.each(result, function (i, obj) {
+                dataArray.push([obj.msjTuru, obj.msjSayi]);
+            });
+            data.addRows(dataArray);
+
+            var columnChartOptions = {
+                title: "Cevaplanan Mesajların - Durum Grafiği",
+                colors: ['#50c249'],
+                bar: { groupWidth: "20%" },
+                animation: {
+                    duration: 1500,
+                    startup: true
+                }
+            };
+
+            var columnChart = new google.visualization.ColumnChart(document
+                .getElementById('PiechartTrue_div'));
+
+            columnChart.draw(data, columnChartOptions);
+            $(window).resize(function () {
+                columnChart.draw(data, columnChartOptions);
+            });
+
+            google.visualization.events.addListener(columnChart, 'select', function () {
+                var selection = columnChart.getSelection();
+                var valueselected = data.getFormattedValue(selection[0].row, 0);
+
+                var url = new URL('https://localhost:44374/Contact/ChartMessageOk');
+                var search_params = url.searchParams;
+                var bastarih = btarih;
+                var bitistarih = bitarih;
+
+
+                search_params.set('chart', valueselected);
+                search_params.set('bastarih', bastarih);
+                search_params.set('bittarih', bitistarih);
+
+                var new_url = url.toString();
+
+                window.location = new_url;
+
+
+            });
+        }
+        //OKUNAN MESAJLARIN DURUM GRAFİĞİ BİTİŞ
+
+        //OKUNMAYAN MESAJLARIN DURUM GRAFİĞİ
+        $(document).ready(function () {
+            $.ajax({
+                type: "POST",
+                dataType: "json",
+                contentType: "application/json",
+                url: '@Url.Action("VisualizeMessageResultFalse", "Contact")',
+                success: function (result) {
+                    google.charts.load('current', {
+                        'packages': ['corechart']
+                    });
+                    google.charts.setOnLoadCallback(function () {
+                        drawChartFalse(result);
+                    });
+                }
+            });
+        });
+
+        function drawChartFalse(result) {
+            var data = new google.visualization.DataTable();
+            data.addColumn('string', 'Name');
+            data.addColumn('number', 'Mesajlar');
+
+            var dataArray = [];
+
+            $.each(result, function (i, obj) {
+                dataArray.push([obj.msjTuru, obj.msjSayi]);
+            });
+            data.addRows(dataArray);
+
+            var columnChartOptions = {
+                title: "Cevaplanmayan Mesajların - Durum Grafiği",
+                colors: ['#e72a19'],
+                bar: { groupWidth: "20%" },
+                animation: {
+                    duration: 1500,
+                    startup: true
+                }
+            };
+
+            var columnChart = new google.visualization.ColumnChart(document
+                .getElementById('PiechartFalse_div'));
+
+            columnChart.draw(data, columnChartOptions);
+            $(window).resize(function () {
+                columnChart.draw(data, columnChartOptions);
+            });
+            google.visualization.events.addListener(columnChart, 'select', function () {
+                var selection = columnChart.getSelection();
+                var valueselected = data.getFormattedValue(selection[0].row, 0);
+
+                var url = new URL('https://localhost:44374/Contact/ChartMessageFalse');
+                var search_params = url.searchParams;
+                var bastarih = btarih;
+                var bitistarih = bitarih;;
+
+
+                search_params.set('chart', valueselected);
+                search_params.set('bastarih', bastarih);
+                search_params.set('bittarih', bitistarih);
+
+                var new_url = url.toString();
+
+                window.location = new_url;
+
+
+            });
+        }
+        //OKUNMAYAN MESAJLARIN DURUM GRAFİĞİ BİTİŞ
+
+        //AYLIK MESAJLARIN DURUM GRAFİĞİ
+        $(document).ready(function () {
+            $.ajax({
+                type: "POST",
+                dataType: "json",
+                contentType: "application/json",
+                url: '@Url.Action("VisualizeMessageResultMounth", "Contact")',
+                success: function (result) {
+                    google.charts.load('current', {
+                        'packages': ['corechart']
+                    });
+                    google.charts.setOnLoadCallback(function () {
+                        drawChartMounth(result);
+                    });
+                }
+            });
+        });
+
+        function drawChartMounth(result) {
+            var data = new google.visualization.DataTable();
+            data.addColumn('string', 'Name');
+            data.addColumn('number', 'İstek');
+            data.addColumn('number', 'Teşekkür');
+            data.addColumn('number', 'Şikayet');
+
+
+            var dataArray = [];
+            var dataArraySikayet = [];
+
+            $.each(result, function (i, obj) {
+                dataArray.push([obj.msjTuru, obj.msjSayi, obj.msjTesekkurSayi, obj.msjSikayetSayi]);
+            });
+            data.addRows(dataArray);
+
+            var columnChartOptions = {
+                title: " Aylık Mesaj - Durum Grafiği",
+                colors: ['#265feb', '#50c249','#e72a19'],
+                bar: { groupWidth: "20%" },
+                pointSize: 15,
+                pointShape: 'square',
+                animation: {
+                    duration: 1500,
+                    startup: true
+                }
+            };
+
+            var columnChart = new google.visualization.LineChart(document
+                .getElementById('PiechartMounth_div'));
+
+            columnChart.draw(data, columnChartOptions);
+            $(window).resize(function () {
+                columnChart.draw(data, columnChartOptions);
+            });
+            google.visualization.events.addListener(columnChart, 'select', function () {
+
+                var selectionnew = columnChart.getSelection();
+                var message = '';
+                for (var i = 0; i < selectionnew.length; i++) {
+                    var item = selectionnew[i];
+                    var type
+                    if (item.column == 1) {
+                        type = "İstek";
+                    } else if (item.column == 2) {
+                        type = "Teşekkür";
+                    } else {
+                        type = "Şikayet";
+                    }
+                }
+                var selection = columnChart.getSelection();
+                var valueselected = data.getFormattedValue(selection[0].row, 0);
+
+                var url = new URL('https://localhost:44374/Contact/ChartMounthList');
+                var search_params = url.searchParams;
+                var bastarih = btarih;
+                var bitistarih = bitarih;
+
+
+                search_params.set('chart', valueselected);
+                search_params.set('column', type);
+                search_params.set('bastarih', bastarih);
+                search_params.set('bittarih', bitistarih);
+
+                var new_url = url.toString();
+
+                window.location = new_url;
+            });
+        }
+        //AYLIK MESAJLARIN DURUM GRAFİĞİ BİTİŞ
+
+        </script>
+    </head>
+
+<section class="content">
+    <div class="container-fluid">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <input type="date" id="baslangic" class="form-control" required />
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <input type="date" id="bitis" class="form-control" required />
+                    </div>
+                </div>
+                <div class="col-sm-12">
+                    <div class="form-group">
+                        <div style="text-align: center">
+                            @using (Html.BeginForm(FormMethod.Post))
+                            {
+                                <button type="submit" id="btn2" class="btn btn-info" style="width:250px" value="monthsubmit" name="btn_2">Aylık Listele</button><span>&nbsp;</span>
+                                <button type="submit" id="btn1" class="btn btn-info" style="width:250px" value="datesubmit" name="btn_1">Listele</button><span>&nbsp;</span>
+                                <button type="submit" id="btn3" class="btn btn-info" style="width:250px" value="weeksubmit" name="btn_3">Haftalık Listele</button><span>&nbsp;</span>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 center">
+                <div class="card card-danger">
+                    <div class="card-header">
+                        <h3 class="card-title">Mesaj Durum Grafiği</h3>
+                        <div class="card-tools">
+                            <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                                <i class="fas fa-minus"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div id="dis_bolme_report">
+                            <div id="Piechart_div" class="ic_bolme_report"></div>
+                            <div id="Piechartnew_div" class="ic_bolme_report"></div>
+                        </div>
+                    </div>
+                    <!-- /.card-body -->
+                </div>
+            </div>
+            <div class="col-md-6 center">
+                <div class="card card-green">
+                    <div class="card-header">
+                        <h3 class="card-title">Mesaj Durum Grafiği</h3>
+                        <div class="card-tools">
+                            <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                                <i class="fas fa-minus"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div id="dis_bolme_report">
+                            <div id="PiechartTrue_div" class="ic_bolme_report"></div>
+                            <div id="PiechartFalse_div" class="ic_bolme_report"></div>
+                        </div>
+                    </div>
+                    <!-- /.card-body -->
+                </div>
+            </div>
+            <div class="col-md-12 center">
+                <div class="card card-primary">
+                    <div class="card-header">
+                        <h3 class="card-title">Aylık Mesaj Durum Grafiği</h3>
+                        <div class="card-tools">
+                            <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                                <i class="fas fa-minus"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div id="dis_bolme_report">
+                            <div id="PiechartMounth_div" class="ic_bolmeaylik_report"></div>
+                        </div>
+                    </div>
+                    <!-- /.card-body -->
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- date-range-picker -->
+<script src="http://ajax.microsoft.com/ajax/jquery/jquery-1.10.2.js" type="text/javascript"></script>
+
+<script src="~/AdminLTE-3.0.4/plugins/jquery/jquery.min.js"></script>
+<script src="~/AdminLTE-3.0.4/plugins/daterangepicker/daterangepicker.js"></script>
+<script src="~/AdminLTE-3.0.4/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script src="http://code.jquery.com/ui/1.11.0/jquery-ui.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.13.0/moment.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/js/bootstrap-datetimepicker.min.js"></script>
+
+<script>
+    $(function () {
+
+        $("#btn1").click(function (e) {
+            e.preventDefault();
+            var b1 = $("#baslangic").val();
+            var b2 = $("#bitis").val();
+            btarih = b1;
+            bitarih = b2;
+            $.ajax({
+                type: "GET",
+                dataType: "json",
+                data:'baslangic='+b1+'&bitis='+b2,
+                contentType: "application/json",
+                url: '@Url.Action("VisualizeMessageResult", "Contact")',
+                success: function (result) {
+                    google.charts.load('current', {
+                        'packages': ['corechart']
+                    });
+                    google.charts.setOnLoadCallback(function () {
+                        drawChart(result);
+                    });
+                }
+            });
+        })
+        $("#btn2").click(function (e) {
+            e.preventDefault();
+            var date = new Date();
+            var firstDay = new Date(date.getFullYear(), date.getMonth(), 1);
+            var lastDay = new Date(date.getFullYear(), date.getMonth() + 1, 0);
+
+            var b1 = firstDay.toLocaleDateString();
+            var b2 = lastDay.toLocaleDateString();
+
+            btarih = b1;
+            bitarih = b2;
+            $.ajax({
+                type: "GET",
+                dataType: "json",
+                data:'baslangic='+b1+'&bitis='+b2,
+                contentType: "application/json",
+                url: '@Url.Action("VisualizeMessageResult", "Contact")',
+                success: function (result) {
+                    google.charts.load('current', {
+                        'packages': ['corechart']
+                    });
+                    google.charts.setOnLoadCallback(function () {
+                        drawChart(result);
+                    });
+                }
+            });
+        })
+        $("#btn3").click(function (e) {
+            e.preventDefault();
+            var currentDate = new Date();
+            var firstday = new Date(currentDate.setDate(currentDate.getDate() - currentDate.getDay())).toLocaleDateString();
+            var lastday = new Date(currentDate.setDate(currentDate.getDate() - currentDate.getDay() + 7)).toLocaleDateString();
+
+            var b1 = firstday;
+            var b2 = lastday;
+
+            btarih = b1;
+            bitarih = b2;
+
+            $.ajax({
+                type: "GET",
+                dataType: "json",
+                data:'baslangic='+b1+'&bitis='+b2,
+                contentType: "application/json",
+                url: '@Url.Action("VisualizeMessageResult", "Contact")',
+                success: function (result) {
+                    google.charts.load('current', {
+                        'packages': ['corechart']
+                    });
+                    google.charts.setOnLoadCallback(function () {
+                        drawChart(result);
+                    });
+                }
+            });
+        })
+
+        $("#btn1").click(function (e) {
+            e.preventDefault();
+            var b1 = $("#baslangic").val();
+            var b2 = $("#bitis").val();
+            $.ajax({
+                type: "GET",
+                dataType: "json",
+                data:'baslangic='+b1+'&bitis='+b2,
+                contentType: "application/json",
+                url: '@Url.Action("VisualizeMessageResultNew", "Contact")',
+                success: function (result) {
+                    google.charts.load('current', {
+                        'packages': ['corechart']
+                    });
+                    google.charts.setOnLoadCallback(function () {
+                        drawChartNew(result);
+                    });
+                }
+            });
+        })
+        $("#btn2").click(function (e) {
+            e.preventDefault();
+            var date = new Date();
+            var firstDay = new Date(date.getFullYear(), date.getMonth(), 1);
+            var lastDay = new Date(date.getFullYear(), date.getMonth() + 1, 0);
+
+            var b1 = firstDay.toLocaleDateString();
+            var b2 = lastDay.toLocaleDateString();
+            $.ajax({
+                type: "GET",
+                dataType: "json",
+                data:'baslangic='+b1+'&bitis='+b2,
+                contentType: "application/json",
+                url: '@Url.Action("VisualizeMessageResultNew", "Contact")',
+                success: function (result) {
+                    google.charts.load('current', {
+                        'packages': ['corechart']
+                    });
+                    google.charts.setOnLoadCallback(function () {
+                        drawChartNew(result);
+                    });
+                }
+            });
+        })
+        $("#btn3").click(function (e) {
+            e.preventDefault();
+            var currentDate = new Date();
+            var firstday = new Date(currentDate.setDate(currentDate.getDate() - currentDate.getDay())).toLocaleDateString();
+            var lastday = new Date(currentDate.setDate(currentDate.getDate() - currentDate.getDay() + 7)).toLocaleDateString();
+
+            var b1 = firstday;
+            var b2 = lastday;
+
+            btarih = b1;
+            bitarih = b2;
+
+            $.ajax({
+                type: "GET",
+                dataType: "json",
+                data:'baslangic='+b1+'&bitis='+b2,
+                contentType: "application/json",
+                url: '@Url.Action("VisualizeMessageResultNew", "Contact")',
+                success: function (result) {
+                    google.charts.load('current', {
+                        'packages': ['corechart']
+                    });
+                    google.charts.setOnLoadCallback(function () {
+                        drawChartNew(result);
+                    });
+                }
+            });
+        })
+
+        $("#btn1").click(function (e) {
+            e.preventDefault();
+            var b1 = $("#baslangic").val();
+            var b2 = $("#bitis").val();
+            $.ajax({
+                type: "GET",
+                dataType: "json",
+                data:'baslangic='+b1+'&bitis='+b2,
+                contentType: "application/json",
+                url: '@Url.Action("VisualizeMessageResultTrue", "Contact")',
+                success: function (result) {
+                    google.charts.load('current', {
+                        'packages': ['corechart']
+                    });
+                    google.charts.setOnLoadCallback(function () {
+                        drawChartTrue(result);
+                    });
+                }
+            });
+    })
+        $("#btn2").click(function (e) {
+            e.preventDefault();
+            var date = new Date();
+            var firstDay = new Date(date.getFullYear(), date.getMonth(), 1);
+            var lastDay = new Date(date.getFullYear(), date.getMonth() + 1, 0);
+
+            var b1 = firstDay.toLocaleDateString();
+            var b2 = lastDay.toLocaleDateString();
+            $.ajax({
+                type: "GET",
+                dataType: "json",
+                data:'baslangic='+b1+'&bitis='+b2,
+                contentType: "application/json",
+                url: '@Url.Action("VisualizeMessageResultTrue", "Contact")',
+                success: function (result) {
+                    google.charts.load('current', {
+                        'packages': ['corechart']
+                    });
+                    google.charts.setOnLoadCallback(function () {
+                        drawChartTrue(result);
+                    });
+                }
+            });
+        })
+        $("#btn3").click(function (e) {
+            e.preventDefault();
+            var currentDate = new Date();
+            var firstday = new Date(currentDate.setDate(currentDate.getDate() - currentDate.getDay())).toLocaleDateString();
+            var lastday = new Date(currentDate.setDate(currentDate.getDate() - currentDate.getDay() + 7)).toLocaleDateString();
+
+            var b1 = firstday;
+            var b2 = lastday;
+
+            btarih = b1;
+            bitarih = b2;
+
+            $.ajax({
+                type: "GET",
+                dataType: "json",
+                data:'baslangic='+b1+'&bitis='+b2,
+                contentType: "application/json",
+                url: '@Url.Action("VisualizeMessageResultTrue", "Contact")',
+                success: function (result) {
+                    google.charts.load('current', {
+                        'packages': ['corechart']
+                    });
+                    google.charts.setOnLoadCallback(function () {
+                        drawChartTrue(result);
+                    });
+                }
+            });
+    })
+
+        $("#btn1").click(function (e) {
+            e.preventDefault();
+            var b1 = $("#baslangic").val();
+            var b2 = $("#bitis").val();
+            $.ajax({
+                type: "GET",
+                dataType: "json",
+                data:'baslangic='+b1+'&bitis='+b2,
+                contentType: "application/json",
+                url: '@Url.Action("VisualizeMessageResultFalse", "Contact")',
+                success: function (result) {
+                    google.charts.load('current', {
+                        'packages': ['corechart']
+                    });
+                    google.charts.setOnLoadCallback(function () {
+                        drawChartFalse(result);
+                    });
+                }
+            });
+    })
+        $("#btn2").click(function (e) {
+            e.preventDefault();
+            var date = new Date();
+            var firstDay = new Date(date.getFullYear(), date.getMonth(), 1);
+            var lastDay = new Date(date.getFullYear(), date.getMonth() + 1, 0);
+
+            var b1 = firstDay.toLocaleDateString();
+            var b2 = lastDay.toLocaleDateString();
+            $.ajax({
+                type: "GET",
+                dataType: "json",
+                data:'baslangic='+b1+'&bitis='+b2,
+                contentType: "application/json",
+                url: '@Url.Action("VisualizeMessageResultFalse", "Contact")',
+                success: function (result) {
+                    google.charts.load('current', {
+                        'packages': ['corechart']
+                    });
+                    google.charts.setOnLoadCallback(function () {
+                        drawChartFalse(result);
+                    });
+                }
+            });
+        })
+        $("#btn3").click(function (e) {
+            e.preventDefault();
+            var currentDate = new Date();
+            var firstday = new Date(currentDate.setDate(currentDate.getDate() - currentDate.getDay())).toLocaleDateString();
+            var lastday = new Date(currentDate.setDate(currentDate.getDate() - currentDate.getDay() + 7)).toLocaleDateString();
+
+            var b1 = firstday;
+            var b2 = lastday;
+
+            btarih = b1;
+            bitarih = b2;
+
+            $.ajax({
+                type: "GET",
+                dataType: "json",
+                data:'baslangic='+b1+'&bitis='+b2,
+                contentType: "application/json",
+                url: '@Url.Action("VisualizeMessageResultFalse", "Contact")',
+                success: function (result) {
+                    google.charts.load('current', {
+                        'packages': ['corechart']
+                    });
+                    google.charts.setOnLoadCallback(function () {
+                        drawChartFalse(result);
+                    });
+                }
+            });
+     })
+    @*$("#btn1").click(function (e) {
+            e.preventDefault();
+            var b1 = $("#baslangic").val();
+            var b2 = $("#bitis").val();
+            $.ajax({
+                type: "GET",
+                dataType: "json",
+                data:'baslangic='+b1+'&bitis='+b2,
+                contentType: "application/json",
+                url: '@Url.Action("VisualizeMessageResultFalse", "Contact")',
+                success: function (result) {
+                    google.charts.load('current', {
+                        'packages': ['corechart']
+                    });
+                    google.charts.setOnLoadCallback(function () {
+                        drawChartFalse(result);
+                    });
+                }
+            });
+     })*@
+    })
+
+</script>

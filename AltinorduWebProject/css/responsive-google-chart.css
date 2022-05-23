@@ -1,0 +1,236 @@
+﻿body {
+}
+#dis_bolme {
+    width: 400px;
+    height: 300px;
+}
+
+.ic_bolme {
+    float:left;
+    margin-right: 2px;
+    width:500px;
+    height:250px;
+}
+.ic_bolmeaylik {
+    float: left;
+    margin-right: 2px;
+    width: 1000px;
+    height: 300px;
+}
+
+@media screen and (max-width:367px){
+    #dis_bolme {
+        width: 450px;
+        height: 300px;
+    }
+
+    .ic_bolme {
+        float: left;
+        width: 250px;
+        height: 251px;
+    }
+
+    .ic_bolmeaylik {
+        float: left;
+        width: 250px;
+        height: 200px;
+    }
+}
+@media screen and (max-width:550px) and (min-width: 367px) {
+    #dis_bolme {
+        width: 450px;
+        height: 300px;
+    }
+
+    .ic_bolme {
+        float: left;
+        width: 280px;
+        height: 251px;
+    }
+
+    .ic_bolmeaylik {
+        float: left;
+        width: 250px;
+        height: 200px;
+    }
+}
+@media screen and (max-width:767px) and (min-width: 550px) {
+    #dis_bolme {
+        width: 450px;
+        height: 300px;
+    }
+
+    .ic_bolme {
+        float: left;
+        width: 350px;
+        height: 251px;
+    }
+
+    .ic_bolmeaylik {
+        float: left;
+        width: 250px;
+        height: 200px;
+    }
+}
+@media screen and (max-width:800px) and (min-width: 767px){
+    #dis_bolme {
+        width: 450px;
+        height: 300px;
+    }
+    .ic_bolme {
+        float: left;
+        width: 280px;
+        height: 251px;
+    }
+    .ic_bolmeaylik {
+        float: left;
+        width: 250px;
+        height: 200px;
+    }
+}
+@media screen and (max-width: 1024px) and (min-width: 801px) {
+    #dis_bolme {
+        width: 450px;
+        height: 300px;
+    }
+
+    .ic_bolme {
+        float: left;
+        width: 313px;
+        height: 640px;
+    }
+
+    .ic_bolmeaylik {
+        float: left;
+        width: 700px;
+        height: 200px;
+    }
+}
+
+@media screen and (max-width: 1049px) and (min-width: 1024px) {
+    #dis_bolme {
+        width: 450px;
+        height: 300px;
+    }
+
+    .ic_bolme {
+        float: left;
+        width: 310px;
+        height: 640px;
+    }
+
+    .ic_bolmeaylik {
+        float: left;
+        width: 700px;
+        height: 200px;
+    }
+}
+@media screen and (max-width: 1170px) and (min-width: 1049px) {
+    #dis_bolme {
+        width: 450px;
+        height: 300px;
+    }
+
+    .ic_bolme {
+        float: left;
+        width: 340px;
+        height: 640px;
+    }
+
+    .ic_bolmeaylik {
+        float: left;
+        width: 700px;
+        height: 200px;
+    }
+}    
+@media screen and (max-width: 1428px) and (min-width: 1170px) {
+    #dis_bolme {
+        width: 450px;
+        height: 300px;
+    }
+
+    .ic_bolme {
+        float: left;
+        width: 400px;
+        height: 640px;
+    }
+
+    .ic_bolmeaylik {
+        float: left;
+        width: 700px;
+        height: 200px;
+    }
+}
+@media screen and (max-width: 1440px) and (min-width: 1428px) {
+    #dis_bolme {
+        width: 450px;
+        height: 300px;
+    }
+
+    .ic_bolme {
+        float: left;
+        width: 530px;
+        height: 640px;
+    }
+
+    .ic_bolmeaylik {
+        float: left;
+        width: 1100px;
+        height: 200px;
+    }
+}
+@media screen and (max-width: 1570px) and (min-width: 1440px) {
+    #dis_bolme {
+        width: 800px;
+        height: 300px;
+    }
+
+    .ic_bolme {
+        float: left;
+        width: 530px;
+        height: 640px;
+    }
+
+    .ic_bolmeaylik {
+        float: left;
+        width: 2000px;
+        height: 500px;
+    }
+}
+@media screen and (max-width: 1970px) and (min-width: 1570px) {
+    #dis_bolme {
+        width: 800px;
+        height: 640px;
+    }
+
+    .ic_bolme {
+        float: left;
+        width: 765px;
+        height: 640px;
+        margin-top: -20px;
+    }
+
+    .ic_bolmeaylik {
+        float: left;
+        width: 2000px;
+        height: 500px;
+    }
+}
+@media screen and (max-width: 2560px) and (min-width: 1970px) {
+    #dis_bolme {
+        width: 800px;
+        height: 500px;
+    }
+
+    .ic_bolme {
+        float: left;
+        width: 1000px;
+        height: 640px;
+    }
+
+    .ic_bolmeaylik {
+        float: left;
+        width: 2000px;
+        height: 500px;
+    }
+}

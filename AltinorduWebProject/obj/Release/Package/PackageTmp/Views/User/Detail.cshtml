@@ -1,0 +1,80 @@
+﻿@using Entities
+@model Personel
+@{
+    ViewBag.Title = "Detail";
+}
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Ad</th>
+            <th scope="col">Soyad</th>
+            <th scope="col">Rumuz</th>
+            <th scope="col">Unvan</th>
+            <th scope="col">E-posta</th>
+            <th scope="col">Durum</th>
+            <th scope="col">Konu</th>
+            <th scope="col">Mesaj</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th scope="row">@Model.Id</th>
+            <td>@Model.Ad</td>
+            <td>@Model.Soyad</td>
+            <td>@Model.Rumuz</td>
+            <td>@Model.Unvan</td>
+            <td>@Model.Eposta</td>
+            <td>@Model.Konu</td>
+            <td>@Model.Mesaj</td>
+        </tr>
+    </tbody>
+</table>
+<div class="container">
+    <div class="container">
+
+        @if (ViewBag.Kontrol != null)
+        {
+            <h3 class="text-warning">@ViewBag.Kontrol</h3>
+        }
+
+
+        <div class="col-lg-5" ng-app="">
+            @using (Html.BeginForm("SendMail", "Home", FormMethod.Post, new { @name = "myForm" }))
+            {
+
+
+                <div class="form-group">
+
+                    <input id="receiverEmail" type="text" class="form-control" name="receiverEmail" placeholder="Email Adressi" />
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <input id="subject" type="text" class="form-control" name="subject" placeholder="subject" id="sifre" />
+
+                </div>
+                <div class="form-group">
+
+                    <textarea id="message" name="message" class="form-control" placeholder="Açıklama"></textarea>
+
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <input type="submit" class="form-control btn-success" value="Yanıtla" />
+
+                </div>
+
+
+            }
+        </div>
+
+    </div>
+</div>
+
+

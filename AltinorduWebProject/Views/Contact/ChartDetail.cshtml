@@ -1,0 +1,49 @@
+﻿@using Entities
+@model  Personel
+
+<div>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    </div>
+
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="~/css/message-detail.css" rel="stylesheet" />
+
+    <div class="container">
+        <div class="row message-wrapper rounded shadow mb-20">
+            <div class="col-md-12 message-sideright">
+                <div class="panel">
+                    <div class="panel-heading">
+                        <div class="media">
+                            <a class="pull-left" href="#">
+                                <img src="~/Scripts/images/chat.png" alt="Rebecca Cabean" class="img-circle avatar">
+                            </a>
+                            &nbsp;
+                            <div class="media-body">
+                                <h4 class="media-heading">
+                                    @Html.DisplayFor(model => model.Ad) @Html.DisplayFor(model => model.Soyad) <a href="@(Url.Action("Detail", "Contact", new { id = Model.Id }))" class="btn btn-danger pull-right rounded"><i class="fa fa-share"></i></a>
+                                    &nbsp;
+                                </h4>
+                                <small>
+                                    @Html.DisplayFor(model => model.MesajTarihi)
+                                </small>
+                            </div>
+                        </div>
+                    </div><!-- /.panel-heading -->
+                <br />
+                    <div class="panel-body">
+                        <p class="lead">
+                           <b> Mesaj Türü </b> : <b>@Html.DisplayFor(model => model.MesajTuru)</b>
+                        </p>
+                        <hr>
+                        <p>
+                            @Html.DisplayFor(model => model.Mesaj)
+                        </p>
+                        <hr>
+                    </div><!-- /.panel-body -->
+                </div><!-- /.panel -->
+            </div><!-- /.message-sideright -->
+        </div>
+    </div>
+</div>

@@ -1,0 +1,161 @@
+﻿
+@{
+    ViewBag.Title = "NewMessage";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>AdminLTE 3 | Compose Message</title>
+    <link href="~/css/login-avatar.css" rel="stylesheet" />
+
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Font Awesome -->
+    <!-- Theme style -->
+    <!-- summernote -->
+    <link rel="stylesheet" href="~/AdminLTE-3.0.4/plugins/summernote/summernote-bs4.css">
+
+    <script src="~/AdminLTE-3.0.4/plugins/summernote/summernote.min.js"></script>
+    <!-- Google Font: Source Sans Pro -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+
+</head>
+<body class="hold-transition sidebar-mini">
+
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1>Yanıtla</h1>
+                </div>
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item"><a href="@Url.Action("Index","Contact")">Mesajlar</a></li>
+                        <li class="breadcrumb-item active">Mesaj Oluştur</li>
+                    </ol>
+                </div>
+            </div>
+        </div><!-- /.container-fluid -->
+    </section>
+    <!-- Main content -->
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                @Html.Action("MessageListMenu", "Contact")
+                <!-- /.col -->
+                <div class="col-md-9">
+                    @using (Html.BeginForm("SendMail", "Contact", FormMethod.Post))
+                    {
+                        <div class="card card-primary card-outline">
+                            <div class="card-header">
+                                <h3 class="card-title">Yeni Mesaj Oluştur</h3>
+                            </div>
+                            <input id="messageId" name="messageId" hidden value=@ViewBag.messageId>
+                            <!-- /.card-header -->
+                            <div class="card-body">
+                                <div class="form-group">
+                                    <input id="email" name="receiverEmail" value=@ViewBag.email class="form-control" placeholder="Kime:">
+                                </div>
+                                <div class="form-group">
+                                    <input id="subject" name="subject" class="form-control" placeholder="Konu:">
+                                </div>
+                                <div class="form-group">
+                                    <textarea id="compose-textarea" name="message" class="form-control" style="height: 300px">
+                                
+                                </textarea>
+                                </div>
+                            </div>
+                            <!-- /.card-body -->
+                            <div class="card-footer">
+                                <div class="float-right">
+                                    <button id="sendMailButton" type="submit" class="btn btn-primary"><i class="far fa-envelope"></i> Gönder</button>
+                                </div>
+                            </div>
+                            <div id="error_message" class="ajax_response" style="float:left"></div>
+                            <div id="success_message" class="ajax_response" style="float:left"></div>
+                            <div class="form-group">
+
+                                @if (ViewBag.Result != null)
+                                {
+                                    <div class="alert alert-@ViewBag.Status" role="alert">
+                                        @ViewBag.Result
+                                    </div>
+                                }
+
+                            </div>
+                            <!-- /.card-footer -->
+                        </div>
+                    }
+                    <!-- /.card -->
+                </div>
+                <!-- /.col -->
+            </div>
+            <!-- /.row -->
+        </div><!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
+    <!-- /.content-wrapper -->
+    <!-- Control Sidebar -->
+    <!-- /.control-sidebar -->
+    <!-- ./wrapper -->
+    <!-- jQuery -->
+    <script src="~/AdminLTE-3.0.4/plugins/jquery/jquery.min.js"></script>
+    <!-- Bootstrap 4 -->
+    <script src="~/AdminLTE-3.0.4/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="~/AdminLTE-3.0.4/dist/js/adminlte.min.js"></script>
+    <!-- AdminLTE for demo purposes -->
+    <script src="~/AdminLTE-3.0.4/dist/js/demo.js"></script>
+    <!-- Summernote -->
+    <script src="~/AdminLTE-3.0.4/plugins/summernote/summernote-bs4.min.js"></script>
+    <!-- Page Script -->
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
+
+    <script>
+        $('#compose-textarea').summernote({
+            placeholder: 'Hello stand alone ui',
+            tabsize: 2,
+            height: 120,
+            toolbar: [
+                ['style', ['style']],
+                ['font', ['bold', 'underline', 'clear']],
+                ['color', ['color']],
+                ['para', ['ul', 'ol', 'paragraph']],
+                ['table', ['table']],
+                ['insert', ['link', 'picture', 'video']],
+                ['view', ['fullscreen', 'codeview', 'help']]
+            ]
+        });
+    </script>
+
+
+    <script>
+//$(function () {
+//    //Add text editor
+//    $('#compose-textarea').summernote()
+//})
+//        var msg_res = '';
+//        var xhttp = new XMLHttpRequest();
+//        $("#sendMailButton").click(function () {
+//            xhttp.open("POST", "/Contact/SendMail?receiverEmail=" + $('#email').val() + "&subject=" + $('#subject').val() + "&message=" + $('#compose-textarea').val() + "&messageId=" + $('#messageId').val(), true);
+//            xhttp.send();
+//            if (xhttp != msg_res) {
+//                alert("Mesaj Gönderildi");
+//            }
+//            else {
+//                alert("Mesaj Gönderilemedi, bir sorun oluştu.")}
+//        });
+    </script>
+</body>
+</html>
+
+

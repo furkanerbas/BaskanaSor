@@ -1,0 +1,52 @@
+﻿<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+<script type="text/javascript">
+
+    $(function () {
+        var json = JSON.parse('<%=TempData["Data"] %>');
+        var datasetDatas = json.DatasetDatas;
+        var dataSets = [];
+        for (var i = 0; i < json.DatasetLabels.length; i++) {
+            var dataSet = {
+                label: json.DatasetLabels[i],
+                backgroundColor: GetRandomColor(),
+                data: datasetDatas[i]
+            };
+            dataSets.push(dataSet);
+        }
+        var ctx1 = document.getElementById("lineChart").getContext('2d');
+        var lineChart = new Chart(ctx1, {
+            type: 'bar',
+            data: { labels: json.Labels, datasets: dataSets },
+            options: {
+                title: { display: true, text: 'Overall Order by Country' },
+                tooltips: {
+                    mode: 'index', intersect: false, mode: 'label'
+                },
+                legend: { display: true, position: "right" },
+                responsive: true,
+                scales: {
+                    xAxes: [{ stacked: true }],
+                    yAxes: [{ stacked: true }]
+                }
+            }
+        });
+    });
+
+    function GetRandomColor() {
+        var trans = '0.5';
+        var color = 'rgba(';
+        for (var i = 0; i < 3; i++) {
+            color += Math.floor(Math.random() * 255) + ',';
+        }
+        color += trans + ')';
+        return color;
+    }
+</script>
+<canvas id="lineChart" height="150" width="200"></canvas>
+<div class="card-body">
+    @using (Html.BeginForm("Index", "User", FormMethod.Post))
+    {
+        <input type="date" name="fromDate" required /> <input type="date" name="toDate" required /> <button type="submit" id="btn1" name="btn_1">Listele</button>
+    }
+</div>

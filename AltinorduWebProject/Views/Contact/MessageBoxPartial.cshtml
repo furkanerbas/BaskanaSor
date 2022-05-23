@@ -1,0 +1,120 @@
+﻿
+@using Entities
+@using PagedList
+@using PagedList.Mvc
+
+@model PagedList.IPagedList<Personel>
+
+
+
+<!------ Include the above in your HEAD tag ---------->
+
+<!DOCTYPE html>
+<html>
+<head>
+
+    <link href="~/css/message-box.css" rel="stylesheet" />
+
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" type="text/css" rel="stylesheet" />
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link href="~/css/pop-up.css" rel="stylesheet" />
+
+</head>
+<body>
+    <div class="container">
+        @*<h3 class=" text-center">Mesaj Kutusu</h3>*@
+        @*<div style="line-height:130%;">
+            <br>
+        </div>*@
+        <div class="inbox_people">
+            <div class="headind_srch">
+                <div class="recent_heading">
+                    <h4>Mesajlar</h4>
+                </div>
+                <div class="srch_bar">
+                    <div class="stylish-input-group">
+                        @using (Html.BeginForm())
+                        {
+                            <input type="text" name="ara" class="search-bar" placeholder="Search">
+                            <span class="input-group-addon">
+                                <button type="submit"> <i class="fa fa-search" aria-hidden="true"></i> </button>
+                            </span>}
+                    </div>
+                </div>
+            </div>
+            <div class="inbox_chat">
+                @foreach (var item in Model)
+                {
+            <div class="chat_list">
+                <a href="javascript:void(0);" class="anchorDetail" data-id="@item.Id">
+                    <div class="chat_people">
+                        <div class="chat_img"> <img src="~/Scripts/images/chat.png" alt="sunil"> </div>
+                        <div class="chat_ib">
+
+                            <h5>@item.Ad @item.Soyad <span class="chat_date">@(((DateTime)item.MesajTarihi).ToString("dd-MMM-yyyy"))</span></h5>
+                            <p>
+                                @item.Mesaj.Substring(0, 40)<span>...</span>
+                            </p>
+
+                        </div>
+                    </div>
+                </a>
+            </div>}
+                <div class="modal" id="myModal">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <form>
+                                    <div class="modal-body">
+                                        <div id='myModalContent'></div>
+                                    </div>
+                                    @*<div class="modal-footer">
+                                        <button type="button" class="btn btn-danger" data-dismiss="modal">Kapat</button>
+                                    </div>*@
+                                </form>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    var TeamDetailPostBackURL = '/Contact/ChartDetailMessage';
+    $(function () {
+        $(".anchorDetail").click(function () {
+            var $buttonClicked = $(this);
+            var id = $buttonClicked.attr('data-id');
+            var options = { "backdrop": "static", keyboard: true };
+            $.ajax({
+                type: "GET",
+                url: TeamDetailPostBackURL,
+                contentType: "application/json; charset=utf-8",
+                data: { "Id": id },
+                datatype: "json",
+                success: function (data) {
+                    $('#myModalContent').html(data);
+                    $('#myModal').modal(options);
+                    $('#myModal').modal('show');
+
+                },
+                error: function () {
+                    alert("Dynamic content load failed.");
+                }
+            });
+        });
+        //$("#closebtn").on('click',function(){
+        //    $('#myModal').modal('hide');
+        $("#closbtn").click(function () {
+            $('#myModal').modal('hide');
+        });
+    });
+</script>

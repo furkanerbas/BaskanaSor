@@ -1,0 +1,40 @@
+﻿@using Entities
+@model IEnumerable<Personel>
+@{
+    ViewBag.Title = "homepage";
+    
+}
+
+<h2>homepage</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Ad</th>
+            <th scope="col">Soyad</th>
+            <th scope="col">Rumuz</th>
+            <th scope="col">Birim</th>
+            <th scope="col">E-posta</th>
+            <th scope="col">Durum</th>
+            <th scope="col">Konu</th>
+            <th scope="col">Mesaj</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Personel personel in Model)
+        {
+        <tr>
+            <th scope="row">@personel.Id</th>
+            <td>@personel.Ad</td>
+            <td>@personel.Soyad</td>
+            <td>@personel.Rumuz</td>
+            <td>@personel.Unvan</td>
+            <td>@personel.Eposta</td>
+            <td>@personel.Konu</td>
+            <td>@personel.Mesaj</td>
+            <td><a href="@Url.Action("Detail","Home", new { id=personel.Rumuz})" class="detail">Detay</a></td>
+
+        </tr>
+        }
+    </tbody>
+</table>

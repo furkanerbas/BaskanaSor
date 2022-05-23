@@ -1,0 +1,25 @@
+﻿
+
+.modal-content {
+    width: 700px;
+}
+.modal {
+    top: 25%;
+}
+    @media screen and (max-width: 320px) {
+        .modal-content {
+            width: 300px;
+        }
+    }
+
+    @media screen and (max-width:800px) and (min-width: 360px) {
+        .modal-content {
+            width: 345px;
+        }
+    }
+
+    @media screen and (max-width: 1024px) and (min-width: 801px) {
+        .modal-content {
+            width: 600px;
+        }
+    }

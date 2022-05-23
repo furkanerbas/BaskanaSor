@@ -1,0 +1,167 @@
+﻿@using Entities
+@model Personel
+@{
+    ViewBag.Title = "Detail";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+</head>
+
+<body class="hold-transition sidebar-mini">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1>Mesaj Detay</h1>
+                </div>
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item"><a href="@Url.Action("Index","Contact")">Mesajlar</a></li>
+                        <li class="breadcrumb-item active">Mesaj Detay</li>
+                    </ol>
+                </div>
+            </div>
+        </div><!-- /.container-fluid -->
+    </section>
+    <!-- Main content -->
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                @Html.Action("MessageListMenu", "Contact")
+                <!-- /.col -->
+                <div class="col-md-9">
+                    <div class="card card-primary card-outline">
+                        @if (Model.MesajTuru == "İstek")
+                        {
+                            <div class="card-header" style="background-color:forestgreen">
+                                <h3 class="card-title"><b>Mesaj İçeriği</b></h3>
+                                <div class="card-tools">
+                                    <a href="#" class="btn btn-tool" data-toggle="tooltip" title="Previous"><i class="fas fa-chevron-left"></i></a>
+                                    <a href="#" class="btn btn-tool" data-toggle="tooltip" title="Next"><i class="fas fa-chevron-right"></i></a>
+                                </div>
+                            </div>
+                        }
+                        else if (Model.MesajTuru == "Teşekkür")
+                        {
+                            <div class="card-header" style="background-color:darkorange">
+                                <h3 class="card-title"><b>Mesaj İçeriği</b></h3>
+                                <div class="card-tools">
+                                    <a href="#" class="btn btn-tool" data-toggle="tooltip" title="Previous"><i class="fas fa-chevron-left"></i></a>
+                                    <a href="#" class="btn btn-tool" data-toggle="tooltip" title="Next"><i class="fas fa-chevron-right"></i></a>
+                                </div>
+                            </div>
+                        }
+                        else
+                        {
+                            <div class="card-header" style="background-color:orangered">
+                                <h3 class="card-title"><b>Mesaj İçeriği</b></h3>
+                                <div class="card-tools">
+                                    <a href="#" class="btn btn-tool" data-toggle="tooltip" title="Previous"><i class="fas fa-chevron-left"></i></a>
+                                    <a href="#" class="btn btn-tool" data-toggle="tooltip" title="Next"><i class="fas fa-chevron-right"></i></a>
+                                </div>
+                            </div>
+                        }
+                        <!-- /.card-header -->
+                        <div class="card-body p-0">
+                            <div class="mailbox-read-info">
+                                <h5>
+                                    <b>Ad Soyad :</b> @Html.DisplayFor(x => x.Ad) @Html.DisplayFor(x => x.Soyad)
+                                    <span class="mailbox-read-time float-right">@(((DateTime)Model.MesajTarihi).ToString("dd-MMM-yyyy"))</span>
+                                </h5>
+                                <br />
+                                <h6>
+                                    <b>Çalıştığı Birim :</b> @Html.DisplayFor(x => x.birim.PersonelBirim)
+                                </h6>
+                                <h6>
+                                    <b>E-posta Adresi :</b> @Html.DisplayFor(x => x.Eposta)
+                                </h6>
+                            </div>
+                            <!-- /.mailbox-controls -->
+                            <div class="mailbox-read-message">
+                                <center><b>MESAJ İÇERİĞİ :</b> </center><p>@Html.DisplayFor(x => x.Mesaj)</p>
+                            </div>
+                            <!-- /.mailbox-read-message -->
+                            <!-- /.mailbox-read-info -->
+                            <div class="mailbox-controls with-border text-center">
+                                <div class="btn-group">
+                                    @if ((Model.Eposta != null))
+                                    {
+                                        <a href="/Contact/SendMail?email=@Model.Eposta&messageId=@Model.Id" type="button" class="btn btn-default btn-sm" data-toggle="tooltip" data-container="body" title="Yanıtla">
+                                            <i class="fas fa-share"> Yanıtla </i>
+                                        </a>
+                                        <span> &nbsp; &nbsp; &nbsp; </span>
+                                        <a href="#Modal1" type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#Modal1">
+                                            <i class="fas fa-share"> Birime Havale Et </i>
+                                        </a>
+                                        @Html.HiddenFor(x => x.Id)
+                                    }
+                                </div>
+                                <!-- /.btn-group -->
+                            </div>
+                        </div>
+                        <!-- /.card-footer -->
+                    </div>
+                    <!-- /.card -->
+                </div>
+                <!-- /.col -->
+            </div>
+            <!-- /.row -->
+        </div>
+    </section>
+    <div class="modal" id="Modal1">
+        @using (Html.BeginForm("Detail", "Contact", FormMethod.Post))
+        {
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2 class="modal-title">Birime Havale Et</h2>
+                    </div>
+                    <form>
+                        <div class="modal-body">
+                            <label>
+                                Havale Etmek İstediğiniz Birim :
+                            </label>
+                            @Html.DropDownListFor(x => x.Eposta, ViewBag.BirimList as SelectList, "-- Çalıştığınız Birim --", new { @class = "form-control" })
+                            <br />
+                            <label>
+                                Eklemek İstediğiniz Mesaj :
+                            </label>
+                            <textarea class="form-control" name="Mesaj" id="Mesaj" cols="30" rows="7">@Model.Mesaj</textarea>
+                            <br />
+                            @if (ViewBag.Result != null)
+                            {
+                                <div class="alert alert-@ViewBag.Status" role="alert">
+                                    @ViewBag.Result
+                                </div>
+                            }
+                        </div>
+                        <div class="modal-footer">
+                            <button id="sendBirimButton" type="submit" class="btn btn-info">Birime Havale Et</button>
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">Kapat</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        }
+        </div>
+
+    <!-- Page Script -->
+    <script>
+$(function () {
+    //Add text editor
+    $('#compose-textarea').summernote()
+})
+        $("#SendBirimButton").click(function () {
+                alert("Mesaj Birime İletildi");
+        });
+    </script>
+
+</body>
+</html>
+
+

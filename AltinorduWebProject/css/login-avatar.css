@@ -1,0 +1,14 @@
+﻿
+.user-panel img
+{
+    height: auto;
+    width: 5.1rem;
+    transition:all .3s ease-in-out;
+}
+.font-padding{
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+
+

@@ -1,0 +1,112 @@
+﻿@using Entities
+@using PagedList
+@using PagedList.Mvc
+
+@model List<Personel>
+@{
+    ViewBag.Title = "Grafik - Cevaplanmış Mesajlar";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+
+<!DOCTYPE html>
+<html>
+
+<body class="hold-transition sidebar-mini">
+
+    <!-- Content Wrapper. Contains page content -->
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1>Cevaplanan Mesajlar</h1>
+                </div>
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item"><a href="@Url.Action("Index","Contact")">Mesajlar</a></li>
+                        <li class="breadcrumb-item active">Grafik İle  Filtreleme - Cevaplanan Mesajlar</li>
+                    </ol>
+                </div>
+            </div>
+        </div><!-- /.container-fluid -->
+    </section>
+    <!-- Main content -->
+    <section class="content">
+        <div class="row">
+            @Html.Action("ChartMessageListMenu", "Contact")
+            <!-- /.col -->
+            <div class="col-md-9">
+                <div class="card card-primary card-outline">
+                    <div class="card-header">
+                        <h3 class="card-title">Grafik İle Filtreleme - Cevaplanan Mesajlar (@ViewBag.menuitem)</h3>
+                        <div class="card-tools">
+                            @using (Html.BeginForm())
+                            {
+                                <div class="input-group input-group-sm">
+                                    <input type="text" name="ara" class="form-control" placeholder="Mail kutusunda ara">
+                                    <div class="input-group-append">
+                                        <button type="submit" name="searchbtn" class="btn btn-default">
+                                            <span class="glyphicon glyphicon-search"></span> Ara
+                                        </button>
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                        <!-- /.card-tools -->
+                    </div>
+                    <!-- /.card-header -->
+                    <div class="card-body p-0">
+                        <div class="mailbox-controls">
+                            <button type="button" onclick="window.location.reload();" class="btn btn-default btn-sm"><i class="fas fa-sync-alt"></i></button>
+                            <!-- /.float-right -->
+                        </div>
+                        <div class="table-responsive mailbox-messages">
+                            <table class="table table-hover table-striped">
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr onclick="location.href = '@(Url.Action("Detail", "Contact", new { id = item.Id }))'">
+
+                                            <td>@Html.ActionLink("Sil", "DeleteDetailMessage", new { id = item.Id }, new { @class = "btn btn-warning", onclick = "return confirm('Silmek istediğinizden emin misiniz?')" })</td>
+                                            <td>
+                                                <div class="icheck-primary">
+                                                    <input type="number" hidden value=@item.Id id="messageId" />
+                                                    <label for="check1"></label>
+                                                </div>
+                                            </td>
+                                            <td class="mailbox-name">@item.Ad  @item.Soyad</td>
+                                            <td class="mailbox-subject">
+                                                <b>@item.MesajTuru</b> - @item.Mesaj.Substring(0, 3)..
+                                            </td>
+                                            <td class="mailbox-attachment"></td>
+                                            <td class="mailbox-date">@(((DateTime)item.MesajTarihi).ToString("dd-MMM-yyyy"))</td>
+                                            @if (item.Okundu == true)
+                                            {
+                                                <td class="mailbox-attachment"><i class="fas fa-envelope-open-text"></i></td>
+                                            }
+
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                            <!-- /.table -->
+                        </div>
+                        <!-- /.mail-box-messages -->
+                    </div>
+                    <!-- /.card-body -->
+                    <div class="card-footer p-0">
+                        <div class="mailbox-controls">
+                            <button type="button" class="btn btn-default btn-sm"><i class="fas fa-sync-alt"></i></button>
+                            <!-- /.float-right -->
+                        </div>
+                    </div>
+                </div>
+                <!-- /.card -->
+            </div>
+            <!-- /.col -->
+        </div>
+        <!-- /.row -->
+    </section>
+
+</body>
+</html>
